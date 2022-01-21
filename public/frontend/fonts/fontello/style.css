@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon3a22.eot?4fpsqs');
+  src:  url('fonts/icomoon3a22.eot?4fpsqs#iefix') format('embedded-opentype'),
+    url('fonts/icomoon3a22.ttf?4fpsqs') format('truetype'),
+    url('fonts/icomoon3a22.woff?4fpsqs') format('woff'),
+    url('fonts/icomoon3a22.svg?4fpsqs#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-whatsapp:before {
+  content: "\e900";
+}
+.icon-tripadvisor:before {
+  content: "\e901";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-whatsapp2:before {
+  content: "\ea93";
+}
+.icon-pinterest2:before {
+  content: "\ead2";
+}
+.icon-travel-16:before {
+  content: "\e808";
+}
+.icon-travel-19:before {
+  content: "\e80a";
+}
+.icon-travel-24:before {
+  content: "\e80f";
+}
+.icon-travel-46:before {
+  content: "\e824";
+}
+.icon-travel-51:before {
+  content: "\e829";
+}
+.icon-travel-54:before {
+  content: "\e82c";
+}
+.icon-travel-55:before {
+  content: "\e82d";
+}
+.icon-travel-56:before {
+  content: "\e82e";
+}
+.icon-travel-57:before {
+  content: "\e82f";
+}
+.icon-travel-59:before {
+  content: "\e831";
+}
+.icon-travel-61:before {
+  content: "\e833";
+}
+.icon-travel-62:before {
+  content: "\e834";
+}
+.icon-travel-63:before {
+  content: "\e835";
+}
+.icon-travel-64:before {
+  content: "\e836";
+}
+.icon-travel-65:before {
+  content: "\e837";
+}
+.icon-travel-69:before {
+  content: "\e83a";
+}
+.icon-lounge:before {
+  content: "\e83e";
+}
+.icon-lounge2:before {
+  content: "\e83f";
+}
+.icon-sailboat:before {
+  content: "\e845";
+}
+.icon-home2:before {
+  content: "\e902";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-mail3:before {
+  content: "\ea85";
+}

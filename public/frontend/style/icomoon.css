@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/icomoon6c2b.eot?s7ii9b');
+  src:  url('../fonts/icomoon/icomoon6c2b.eot?s7ii9b#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon6c2b.ttf?s7ii9b') format('truetype'),
+    url('../fonts/icomoon/icomoon6c2b.woff?s7ii9b') format('woff'),
+    url('../fonts/icomoon/icomoon6c2b.svg?s7ii9b#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="cg__icon-"], [class*=" cg__icon-"], [class^="cg__arrow-"], [class*="cg__arrow-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cg__icon-googleplus2:before {
+  content: "\ec57";
+}
+.cg__icon-facebook2:before {
+  content: "\ec5c";
+}
+.cg__icon-twitter2:before {
+  content: "\ec62";
+}
+.cg__icon-linkedin2:before {
+  content: "\ec96";
+}
+.cg__arrow-left:before {
+  content: "\e509";
+}
+.cg__arrow-right:before {
+  content: "\e510";
+}
+.cg__icon-linkedin:before {
+  content: "\e900";
+}
+.cg__icon-facebook:before {
+  content: "\e901";
+}
+.cg__icon-twitter:before {
+  content: "\e902";
+}
+.cg__icon-ship:before {
+  content: "\e903";
+}
+.cg__icon-truck:before {
+  content: "\e904";
+}
+.cg__icon-plane:before {
+  content: "\e905";
+}
+.cg__icon-ball:before {
+  content: "\e906";
+}
+.cg__icon-box:before {
+  content: "\e907";
+}
+.cg__icon-forklift:before {
+  content: "\e908";
+}
+.cg__icon-workers:before {
+  content: "\e909";
+}
+.cg__icon-map:before {
+  content: "\e90a";
+}
+.cg__icon-phone:before {
+  content: "\e90b";
+}
+.cg__icon-email:before {
+  content: "\e90c";
+}
+.cg__icon-clock:before {
+  content: "\e90d";
+}
+.cg__icon-googleplus:before {
+  content: "\e90e";
+}
