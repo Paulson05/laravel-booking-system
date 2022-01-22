@@ -90,75 +90,7 @@
         </a>
 
     </li>
-    <li >
 
-
-        <a data-toggle="collapse" href="#pagesExamples" >
-
-            <i class="now-ui-icons design_image"></i>
-
-            <p>
-               ShowDays <b class="caret"></b>
-            </p>
-        </a>
-
-        <div class="collapse " id="pagesExamples">
-            <ul class="nav">
-
-
-                <li  class="{{ Route::currentRouteNamed('monday.index') ? 'active' : '' }}" >
-                    <a href="{{route('monday.index')}}">
-                        <span class="sidebar-mini-icon">M</span>
-                        <span class="sidebar-normal">Monday</span>
-                    </a>
-                </li>
-                <li  class="{{ Route::currentRouteNamed('tuesday.index') ? 'active' : '' }}" >
-                    <a href="{{route('tuesday.index')}}">
-                        <span class="sidebar-mini-icon">T</span>
-                        <span class="sidebar-normal">Tuesday</span>
-                    </a>
-                </li>
-                <li  class="{{ Route::currentRouteNamed('wednesday.index') ? 'active' : '' }}" >
-                    <a href="{{route('wednesday.index')}}">
-                        <span class="sidebar-mini-icon">W</span>
-                        <span class="sidebar-normal">Wednesday</span>
-                    </a>
-                </li>
-                <li  class="{{ Route::currentRouteNamed('thursday.index') ? 'active' : '' }}" >
-                    <a href="{{route('thursday.index')}}">
-                        <span class="sidebar-mini-icon">T</span>
-                        <span class="sidebar-normal">Thursday</span>
-                    </a>
-                </li>
-                <li  class="{{ Route::currentRouteNamed('friday.index') ? 'active' : '' }}" >
-                    <a href="{{route('friday.index')}}">
-                        <span class="sidebar-mini-icon">F</span>
-                        <span class="sidebar-normal">Friday</span>
-                    </a>
-                </li>
-                <li  class="{{ Route::currentRouteNamed('saturday.index') ? 'active' : '' }}" >
-                    <a href="{{route('saturday.index')}}">
-                        <span class="sidebar-mini-icon">S</span>
-                        <span class="sidebar-normal">Saturday</span>
-                    </a>
-                </li>
-                <li  class="{{ Route::currentRouteNamed('sunday.index') ? 'active' : '' }}" >
-                    <a href="{{route('sunday.index')}}">
-                        <span class="sidebar-mini-icon">S</span>
-                        <span class="sidebar-normal">Sunday</span>
-                    </a>
-                </li>
-
-
-
-
-
-
-            </ul>
-        </div>
-
-
-    </li>
 
     <li class="{{ Route::currentRouteNamed('tag.index') ? 'active' : '' }}" >
 
