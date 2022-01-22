@@ -100,10 +100,10 @@
 
     </li>
 
-    <li  class="{{ Route::currentRouteNamed('post.index') ? 'active' : '' }}" >
+    <li  class="{{ Route::currentRouteNamed('booking.index') ? 'active' : '' }}" >
 
 
-        <a href="{{route('post.index')}}">
+        <a href="{{route('booking.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -122,10 +122,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+    <li  class="{{ Route::currentRouteNamed('roomtype.index') ? 'active' : '' }}" >
 
 
-        <a href="{{route('category.index')}}">
+        <a href="{{route('roomtype.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -133,10 +133,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+    <li  class="" >
 
 
-        <a href="{{route('category.index')}}">
+        <a href="">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -145,10 +145,10 @@
 
     </li>
 
-    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+    <li  class="" >
 
 
-        <a href="{{route('category.index')}}">
+        <a href="{{}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -156,10 +156,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+    <li  class="" >
 
 
-        <a href="{{route('category.index')}}">
+        <a href="">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -167,10 +167,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+    <li  class="" >
 
 
-        <a href="{{route('category.index')}}">
+        <a href="">
 
             <i class="now-ui-icons design_app"></i>
 

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\RoomType;
 use Illuminate\Http\Request;
 
-class RoomTypeController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class RoomTypeController extends Controller
      */
     public function index()
     {
-        $roomtype = RoomType::all();
-        return  view('admin.pages.roomtype.index', ['roomtype'=>$roomtype]);
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class RoomTypeController extends Controller
      */
     public function create()
     {
-        return  view('admin.pages.roomtype.create');
+        //
     }
 
     /**

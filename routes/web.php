@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\RoomController;
+use App\Http\Controllers\Admin\RoomTypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,7 +46,9 @@ Route::resource('team', TeamController::class)->only(['index','store','show','up
 
 
 Route::resource('room', RoomController::class)->only(['index','store','show','update','destroy','edit','create']);
-Route::resource('category', CategoryController::class)->only(['index','store','show','update','destroy','edit','create']);
+Route::resource('roomtype', RoomTypeController::class)->only(['index','store','show','update','destroy','edit','create']);
+Route::resource('booking', BookingController::class)->only(['index','store','show','update','destroy','edit','create']);
+
 
 Route::resource('post', PostController::class)->only(['index','store','show','update','destroy','edit','create'  ]);
 Route::resource('users', UsersController::class)->only(['index','store','show','update','destroy','edit','create'  ]);

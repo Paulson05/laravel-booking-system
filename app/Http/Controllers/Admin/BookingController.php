@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\RoomType;
+use App\Models\Booking;
+use App\Models\Customer;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
-class RoomTypeController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,8 @@ class RoomTypeController extends Controller
      */
     public function index()
     {
-        $roomtype = RoomType::all();
-        return  view('admin.pages.roomtype.index', ['roomtype'=>$roomtype]);
+        $booking = Booking::all();
+        return view('admin.pages.booking.index', ['booking'=> $booking]);
     }
 
     /**
@@ -26,7 +28,9 @@ class RoomTypeController extends Controller
      */
     public function create()
     {
-        return  view('admin.pages.roomtype.create');
+        $room = Room::all();
+        $customers = Customer::all();
+        return view('admin.pages.booking.create', ['customers'=> $customers, 'room'=> $room]);
     }
 
     /**
