@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sunday extends Model
+class Room extends Model
 {
     use HasFactory;
-    protected $table = 'sundays';
+
+    protected  $table = 'room_types';
     protected $guarded = [];
+    function Roomtype(){
+        return $this->belongsTo(RoomType::class,'room_type_id');
+    }
 }

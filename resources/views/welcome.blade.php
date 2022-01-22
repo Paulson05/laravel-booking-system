@@ -1,4 +1,3 @@
-
 @extends('frontend.template.master')
 @section('body')
 <header id="header" class="site-header header--sticky header--not-sticked site-header--absolute">
@@ -11,8 +10,8 @@
                         <div id="logo-container">
                             <div class="site-logo">
                                 <a href="index-2.html" class="site-logo-anch">
-                                    <img class="logo-img-sticky site-logo-img-sticky" src="{{asset('frontend/img-assets/greekhotel-logo-white.png')}}" alt="greekhotel2" title="Greek Hotel2">
-                                    <img class="logo-img site-logo-img" src="{{asset('frontend/img-assets/greekhotel-logo.png')}}" alt="greekhotel3" title="Greek Hotel3" width="196" height="36">
+                                    <img class="logo-img-sticky site-logo-img-sticky" src="img-assets/greekhotel-logo-white.png" alt="greekhotel" title="Greek Hotel">
+                                    <img class="logo-img site-logo-img" src="img-assets/greekhotel-logo.png" alt="greekhotel" title="Greek Hotel" width="196" height="36">
                                 </a>
                             </div>
                         </div>
@@ -48,9 +47,9 @@
             <!-- START REVOLUTION SLIDER 5.4.5.1 fullscreen mode -->
             <div id="rev_slider_1_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.5.1">
                 <ul>	<!-- SLIDE  -->
-                    <li data-index="rs-1" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('frontend/images/slider_01cthumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-1" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_01cthumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_01c.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_01c.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 1 -->
@@ -116,9 +115,9 @@
                             Spa Resort </div>
                     </li>
                     <!-- SLIDE  -->
-                    <li data-index="rs-2" data-transition="slotzoom-vertical" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('frontend/images/slider_09thumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-2" data-transition="slotzoom-vertical" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_09thumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_09.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_09.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 4 -->
@@ -184,9 +183,9 @@
                             Spa Resort </div>
                     </li>
                     <!-- SLIDE  -->
-                    <li data-index="rs-3" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('frontend/images/slider_11thumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-3" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_11thumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_11.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_11.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 7 -->
@@ -252,9 +251,9 @@
                             Spa Resort </div>
                     </li>
                     <!-- SLIDE  -->
-                    <li data-index="rs-4" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('fronend/images/slider_11thumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-4" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_11thumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_12.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_12.jpg"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 10 -->
@@ -320,9 +319,9 @@
                             Spa Resort </div>
                     </li>
                     <!-- SLIDE  -->
-                    <li data-index="rs-5" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('frontend/images/slider_13thumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-5" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_13thumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_13.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_13.jpg"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 13 -->
@@ -388,9 +387,9 @@
                             Spa Resort </div>
                     </li>
                     <!-- SLIDE  -->
-                    <li data-index="rs-6" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('frontend/images/slider_14thumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-6" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_14thumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_14.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_14.jpg"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 16 -->
@@ -456,9 +455,9 @@
                             Spa Resort </div>
                     </li>
                     <!-- SLIDE  -->
-                    <li data-index="rs-7" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('frontend/images/slider_15thumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-7" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_15thumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_15.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_15.jpg"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 19 -->
@@ -524,9 +523,9 @@
                             Spa Resort </div>
                     </li>
                     <!-- SLIDE  -->
-                    <li data-index="rs-8" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('froentend/images/slider_19thumb.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-8" data-transition="slotzoom-horizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="images/slider_19thumb.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('frontend/images/slider_19.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
+                        <img src="images/slider_19.jpg"  alt=""  data-bgposition="center center" data-bgfit="normal" data-bgrepeat="no-repeat" data-bgparallax="8" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 22 -->
@@ -865,9 +864,9 @@
                         <!--big picture-->
                         <div class="gridGallery--cols2 gridGallery__item-w2">
                             <div class="hg-gridGallery__wrapper hg-gridGallery__item-h1">
-                                <a href="{{asset('fronend/images/room_18.jpg')}}" class="hg-gridGallery--image_link sh__zoom--on">
+                                <a href="images/room_18.jpg" class="hg-gridGallery--image_link sh__zoom--on">
                                     <div class="img-container">
-                                        <img src="{{asset('frontend/images/room_18.jpg')}}" alt="glr1" width="740">
+                                        <img src="images/room_18.jpg" alt="glr1" width="740">
                                     </div>
                                     <i class="hg-icon glyphicon glyphicon-search hg-icon__circled-icon"></i>
                                 </a>
@@ -1547,4 +1546,8 @@
     </div>
 
 </div>
-endsection
+<!-- START FOOTER SECTION -->
+<!-- end footer section -->
+</div><!-- end page_wrapper -->
+<a href="#" class="totop">TOP</a> <!--/.totop -->
+@endsection

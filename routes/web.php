@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\RoomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.template');
+    return view('welcome');
 });
 
 
@@ -41,8 +43,8 @@ Route::post('/post/login',  [AdminController::class, 'postLogin'])->name('admin.
 Route::resource('team', TeamController::class)->only(['index','store','show','update','destroy','edit','create'  ]);
 
 
-Route::resource('tag', TagController::class)->only(['index','store','show','update','destroy','edit','create'  ]);
-Route::resource('category', CategoryController::class)->only(['index','store','show','update','destroy','edit','create'  ]);
+Route::resource('room', RoomController::class)->only(['index','store','show','update','destroy','edit','create']);
+Route::resource('category', CategoryController::class)->only(['index','store','show','update','destroy','edit','create']);
 
 Route::resource('post', PostController::class)->only(['index','store','show','update','destroy','edit','create'  ]);
 Route::resource('users', UsersController::class)->only(['index','store','show','update','destroy','edit','create'  ]);

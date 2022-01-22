@@ -62,11 +62,43 @@
 
             <i class="now-ui-icons design_app"></i>
 
-            <p>Team</p>
+            <p>Customer</p>
         </a>
 
     </li>
+    <li  class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
 
+
+        <a href="{{route('team.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Department</p>
+        </a>
+
+    </li>
+    <li  class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
+
+
+        <a href="{{route('team.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Staff</p>
+        </a>
+
+    </li>
+    <li  class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
+
+
+        <a href="{{route('team.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Staff payment</p>
+        </a>
+
+    </li>
 
     <li  class="{{ Route::currentRouteNamed('post.index') ? 'active' : '' }}" >
 
@@ -75,7 +107,18 @@
 
             <i class="now-ui-icons design_app"></i>
 
-            <p>Post</p>
+            <p>Booking</p>
+        </a>
+
+    </li>
+    <li  class="{{ Route::currentRouteNamed('room.index') ? 'active' : '' }}" >
+
+
+        <a href="{{route('room.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Room</p>
         </a>
 
     </li>
@@ -86,98 +129,59 @@
 
             <i class="now-ui-icons design_app"></i>
 
-            <p>Category</p>
+            <p>Room type</p>
+        </a>
+
+    </li>
+    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+
+
+        <a href="{{route('category.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Room type image</p>
+        </a>
+
+    </li>
+
+    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+
+
+        <a href="{{route('category.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Services</p>
+        </a>
+
+    </li>
+    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+
+
+        <a href="{{route('category.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Testimonies</p>
+        </a>
+
+    </li>
+    <li  class="{{ Route::currentRouteNamed('category.index') ? 'active' : '' }}" >
+
+
+        <a href="{{route('category.index')}}">
+
+            <i class="now-ui-icons design_app"></i>
+
+            <p>Banner</p>
         </a>
 
     </li>
 
 
-    <li class="{{ Route::currentRouteNamed('tag.index') ? 'active' : '' }}" >
 
 
-        <a data-toggle="collapse" href="#componentsExamples" >
-
-            <i class="now-ui-icons education_atom"></i>
-
-            <p>
-                Tags<b class="caret"></b>
-            </p>
-        </a>
-
-        <div class="collapse " id="componentsExamples">
-            <ul class="nav">
-
-                <li  class="{{ Route::currentRouteNamed('tag.index') ? 'active' : '' }}">
-                    <a href="{{route('tag.index')}}">
-                        <span class="sidebar-mini-icon">T</span>
-                        <span class="sidebar-normal">Tags</span>
-                    </a>
-                </li>
-
-
-
-            </ul>
-        </div>
-
-
-    </li>
-
-    <li class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}" >
-
-
-        <a data-toggle="collapse" href="#formsExamples" >
-
-            <i class="now-ui-icons files_single-copy-04"></i>
-
-            <p>
-                User <b class="caret"></b>
-            </p>
-        </a>
-
-        <div class="collapse " id="formsExamples">
-            <ul class="nav">
-
-                <li >
-                    <a href="{{route('users.index')}}">
-                        <span class="sidebar-mini-icon">U</span>
-                        <span class="sidebar-normal">Users</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-
-    </li>
-
-    <li class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
-
-
-        <a data-toggle="collapse" href="#tablesExamples" >
-
-            <i class="now-ui-icons design_bullet-list-67"></i>
-
-            <p>
-                Roles<b class="caret"></b>
-            </p>
-        </a>
-
-        <div class="collapse " id="tablesExamples">
-            <ul class="nav">
-
-
-                <li >
-                    <a href="{{route('roles.index')}}">
-                        <span class="sidebar-mini-icon">R</span>
-                        <span class="sidebar-normal">Roles</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-
-    </li>
 
 
 

@@ -21,7 +21,7 @@
 <div id="page_wrapper">
    yield('body')
     <!-- START FOOTER SECTION -->
-    @include('frontend.template.partials.footer')
+    @include('frontend.template.partials.footers')
     	<!-- end footer section -->
 </div><!-- end page_wrapper -->
 <a href="#" class="totop">TOP</a> <!--/.totop -->

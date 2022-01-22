@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Monday extends Model
+class RoomType extends Model
 {
     use HasFactory;
-    protected $table = 'mondays';
-    protected  $guarded = [];
+
+    function roomtypeimgs(){
+        return $this->hasMany(Roomtypeimage::class,'room_type_id');
+    }
+
 }
