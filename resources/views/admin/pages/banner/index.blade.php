@@ -1,57 +1,64 @@
-@extends('layout')
-@section('content')
+@extends('admin.template.master')
+@section('body')
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Customers
-                                <a href="{{url('admin/banner/create')}}" class="float-right btn btn-success btn-sm">Add New</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Banner
+                                <a href="{{route('banner.create')}}" class="float-right btn btn-success btn-sm">Add New</a>
                             </h6>
                         </div>
-                        <div class="card-body">
-                            @if(Session::has('success'))
-                            <p class="text-success">{{session('success')}}</p>
-                            @endif
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <i class="fas fa-table"></i>
+                                Data Table Example</div>
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Banner</th>
-                                            <th>Alt Text</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Name</th>
+                                            <th>Title</th>
+                                            <th class="disabled-sorting text-right">Actions</th>
                                         </tr>
-                                    </thead>
-                                    <tfoot>
+                                        </thead>
+                                        <tfoot>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Banner</th>
-                                            <th>Alt Text</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Name</th>
+                                            <th>Title</th>
+
+                                            <th class="disabled-sorting text-right">Actions</th>
                                         </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        @if($data)
-                                            @foreach($data as $d)
-                                            <tr>
-                                                <td>{{$d->id}}</td>
-                                                <td><img width="100" src="{{asset('storage/app/'.$d->banner_src)}}" /></td>
-                                                <td>{{$d->alt_text}}</td>
-                                                <td>{{$d->publish_status}}</td>
-                                                <td>
-                                                    <a href="{{url('admin/banner/'.$d->id).'/edit'}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                                    <a onclick="return confirm('Are you sure to delete this data?')" href="{{url('admin/banner/'.$d->id).'/delete'}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        @endif
-                                    </tbody>
-                                </table>
+                                        </tfoot>
+                                        <tbody>
+                                        @foreach($banner as $tag)
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$tag->title}}</td>
+
+                                            <td class="text-right">
+                                                <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
+                                                    show</i>
+                                                </a>
+
+
+                                                <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
+                                                <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+                            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                         </div>
                     </div>
 

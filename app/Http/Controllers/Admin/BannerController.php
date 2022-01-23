@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class BannerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all();
-        return view('admin.pages.customer.index', ['customers'=> $customers]);
+        $banner = Banner::all();
+        return view('admin.pages.banner.index', ['banner'=> $banner]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.customer.create');
+        return  view ('admin.pages.banner.create');
     }
 
     /**

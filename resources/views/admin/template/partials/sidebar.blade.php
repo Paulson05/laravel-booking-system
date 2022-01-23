@@ -55,10 +55,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
+    <li  class="{{ Route::currentRouteNamed('customer.index') ? 'active' : '' }}">
 
 
-        <a href="{{route('team.index')}}">
+        <a href="{{route('customer.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -66,10 +66,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
+    <li  class="{{ Route::currentRouteNamed('department.index') ? 'active' : '' }}">
 
 
-        <a href="{{route('team.index')}}">
+        <a href="{{route('department.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -77,10 +77,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
+    <li  class="{{ Route::currentRouteNamed('staff.index') ? 'active' : '' }}">
 
 
-        <a href="{{route('team.index')}}">
+        <a href="{{route('staff.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -88,10 +88,10 @@
         </a>
 
     </li>
-    <li  class="{{ Route::currentRouteNamed('team.index') ? 'active' : '' }}">
+    <li  class="{{ Route::currentRouteNamed('staffpayment.index') ? 'active' : '' }}">
 
 
-        <a href="{{route('team.index')}}">
+        <a href="{{route('staffpayment.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -145,10 +145,10 @@
 
     </li>
 
-    <li  class="" >
+    <li  class="{{ Route::currentRouteNamed('services.index') ? 'active' : '' }}" >
 
 
-        <a href="{{}}">
+        <a href="{{route('services.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -156,10 +156,10 @@
         </a>
 
     </li>
-    <li  class="" >
+    <li  class="{{ Route::currentRouteNamed('testimonies.index') ? 'active' : '' }}" >
 
 
-        <a href="">
+        <a href="{{route('testimonies.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 
@@ -167,10 +167,10 @@
         </a>
 
     </li>
-    <li  class="" >
+    <li  class="{{ Route::currentRouteNamed('banner.index') ? 'active' : '' }}" >
 
 
-        <a href="">
+        <a href="{{route('banner.index')}}">
 
             <i class="now-ui-icons design_app"></i>
 

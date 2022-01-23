@@ -4,10 +4,10 @@
 
 <div class="row py-lg-2">
     <div class="col-md-6 mt-5">
-        <button class="btn btn-primary btn-lg float-md-left" role="button" aria-pressed="true">List of Customer</button>
+        <button class="btn btn-primary btn-lg float-md-left" role="button" aria-pressed="true">List of Testimonial</button>
     </div>
     <div class="col-md-6 mt-5">
-        <a href="{{route('customer.create')}}" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New Tag</a>
+        <a href="{{route('testimonies.create')}}" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New Testimonies</a>
     </div>
 
 </div>
@@ -36,7 +36,7 @@
                 </tr>
                 </tfoot>
                 <tbody>
-                @foreach($customers as $tag)
+                @foreach($testimonies as $tag)
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$tag->title}}</td>
@@ -86,7 +86,7 @@
         </div>
     </div>
 </div>
-                <!-- /.container-fluid -->
+<!-- /.container-fluid -->
 
 @section('scripts')
 <!-- Custom styles for this page -->

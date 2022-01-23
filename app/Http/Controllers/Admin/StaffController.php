@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
+use App\Models\Department;
+use App\Models\Staff;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class StaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all();
-        return view('admin.pages.customer.index', ['customers'=> $customers]);
+        $staff = Staff::all();
+        return view('admin.pages.staff.index', ['staff'=>$staff]);
     }
 
     /**
@@ -26,7 +27,8 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.customer.create');
+        $departs = Department::all();
+        return view('admin.pages.staff.create',['departs' => $departs ] );
     }
 
     /**

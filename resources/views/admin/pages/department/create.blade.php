@@ -1,5 +1,5 @@
-@extends('layout')
-@section('content')
+@extends('admin.template.master')
+@section('body')
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -7,7 +7,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Add Department
-                                <a href="{{url('admin/department')}}" class="float-right btn btn-success btn-sm">View All</a>
+                                <a href="{{route('department.index')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -31,7 +31,7 @@
                                         <tr>
                                             <td colspan="2">
                                                 <input type="submit" class="btn btn-primary" />
-                                            </td> 
+                                            </td>
                                         </tr>
                                     </table>
                                 </form>

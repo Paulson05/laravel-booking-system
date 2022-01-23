@@ -1,5 +1,5 @@
-@extends('layout')
-@section('content')
+@extends('admin.template.master')
+@section('body')
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -52,7 +52,7 @@
                                         <tr>
                                             <td colspan="2">
                                                 <input type="submit" class="btn btn-primary" />
-                                            </td> 
+                                            </td>
                                         </tr>
                                     </table>
                                 </form>
