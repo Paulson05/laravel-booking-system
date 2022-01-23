@@ -1,5 +1,5 @@
-@extends('layout')
-@section('content')
+@extends('admin.template.master')
+@section('body')
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -7,7 +7,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Add RoomType
-                                <a href="{{url('admin/customer')}}" class="float-right btn btn-success btn-sm">View All</a>
+                                <a href="{{route('customer.index')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -15,23 +15,23 @@
                                 <table class="table table-bordered" >
                                     <tr>
                                         <th>FullName</th>
-                                        <td>{{$data->full_name}}</td>
+                                        <td>{{$customer->full_name}}</td>
                                     </tr>
                                     <tr>
                                         <th>Photo</th>
-                                        <td><img width="100" src="{{asset('storage/app/'.$data->photo)}}" /></td>
+                                        <td><img width="100" src="{{ asset('imgs/thumb').'/'.$customer->photo }}" /></td>
                                     </tr>
                                     <tr>
                                         <th>Email</th>
-                                        <td>{{$data->email}}</td>
+                                        <td>{{$customer->email}}</td>
                                     </tr>
                                     <tr>
                                         <th>Mobile</th>
-                                        <td>{{$data->mobile}}</td>
+                                        <td>{{$customer->mobile}}</td>
                                     </tr>
                                     <tr>
                                         <th>Address</th>
-                                        <td>{{$data->address}}</td>
+                                        <td>{{$customer->address}}</td>
                                     </tr>
                                 </table>
                             </div>

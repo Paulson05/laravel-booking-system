@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CustomerStoreRequest;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use PhpParser\Lexer\TokenEmulator\ReadonlyTokenEmulator;
 
 class CustomerController extends Controller
 {
@@ -35,9 +37,25 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CustomerStoreRequest $request)
     {
-        //
+
+
+        if($request->hasFile('photo')){
+            $image1=$request->file('photo');
+            $reThumbImage=time().'.'.$image1->getClientOriginalExtension();
+            $dest1=public_path('/imgs/thumb');
+            $image1->move($dest1,$reThumbImage);
+        }else{
+            $reThumbImage='na';
+        }
+        $customer = Customer::create(collect($request->only(['full_name','email','mobile','address']))
+            ->put('photo',$reThumbImage)
+            ->put('password', bcrypt($request->password))
+            ->all());
+        $customer->save();
+
+        return redirect()->back()->with('success', 'customer added sucessfully');
     }
 
     /**
@@ -46,40 +64,44 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Customer $customer)
     {
-        //
+       return view('admin.pages.customer.show', ['customer' => $customer]);
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    public function edit(Customer $customer)
     {
-        //
+        return view('admin.pages.customer.edit', ['customer'=> $customer]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Customer $customer)
     {
-        //
+
+
+
+
+
+
+        if($customer){
+            if($request->hasFile('photo')){
+                $image1=$request->file('photo');
+                $reThumbImage=time().'.'.$image1->getClientOriginalExtension();
+                $dest1=public_path('/imgs/thumb');
+                $image1->move($dest1,$reThumbImage);
+            }else{
+                $reThumbImage='na';
+            }
+
+
+            $customer->update(collect($request->only(['full_name','email','mobile','address']))->put('photo',$reThumbImage)->put('password', bcrypt($request->password))->all());
+            return redirect()->route('customer.index')
+                ->with('success', 'stage updated sucessfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    }
     public function destroy($id)
     {
         //

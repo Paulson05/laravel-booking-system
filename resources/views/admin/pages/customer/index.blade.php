@@ -7,7 +7,7 @@
         <button class="btn btn-primary btn-lg float-md-left" role="button" aria-pressed="true">List of Customer</button>
     </div>
     <div class="col-md-6 mt-5">
-        <a href="{{route('customer.create')}}" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New Tag</a>
+        <a href="{{route('customer.create')}}" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New Customer</a>
     </div>
 
 </div>
@@ -17,38 +17,58 @@
         <i class="fas fa-table"></i>
         Data Table Example</div>
     <div class="card-body">
-
+        @if(Session::has('success'))
+        <p class="text-success text-center">{{session('success')}}</p>
+        @endif
         <div class="table-responsive">
             <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
+                    <th>S/n</th>
                     <th>Name</th>
-                    <th>Title</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>photo</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+
+
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
+                    <th>S/N</th>
                     <th>Name</th>
-                    <th>Title</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>photo</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
 
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                @foreach($customers as $tag)
+                @foreach($customers as $customer)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$tag->title}}</td>
+                    <td>{{$customer->full_name}}</td>
+                    <td>{{$customer->email}}</td>
+                    <td>{{$customer->password}}</td>
+                    <td><img src="{{ asset('imgs/thumb').'/'.$customer->photo }}" width="50" /></td>
+                    <td>{{$customer->address}}</td>
+                    <td>{{$customer->mobile}}</td>
+
 
                     <td class="text-right">
-                        <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
+                        <a href="{{route('customer.show', ['customer' => $customer->id])}}" title="show">
                             show</i>
                         </a>
 
 
-                        <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
-                        <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+                        <a href="{{route('customer.edit', ['customer' => $customer->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
+                        <form style="display: inline-block" method="post" action="" >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>

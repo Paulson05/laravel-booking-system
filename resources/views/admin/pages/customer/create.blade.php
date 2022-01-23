@@ -7,7 +7,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Add Customer
-                                <a href="{{url('admin/customer')}}" class="float-right btn btn-success btn-sm">View All</a>
+                                <a href="{{route('customer.index')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -22,7 +22,7 @@
                             <p class="text-success">{{session('success')}}</p>
                             @endif
                             <div class="table-responsive">
-                                <form method="post" enctype="multipart/form-data" action="{{url('admin/customer')}}">
+                                <form method="post" enctype="multipart/form-data" action="{{route('customer.store')}}">
                                     @csrf
                                     <table class="table table-bordered" >
                                         <tr>
@@ -43,7 +43,7 @@
                                         </tr>
                                         <tr>
                                             <th>Photo</th>
-                                            <td><input name="photo[]" multiple type="file" /></td>
+                                            <td><input name="photo" multiple type="file" /></td>
                                         </tr>
                                         <tr>
                                             <th>Address</th>
