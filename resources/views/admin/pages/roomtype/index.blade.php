@@ -24,6 +24,8 @@
                 <tr>
                     <th>Name</th>
                     <th>Title</th>
+                    <th>price</th>
+                    <th>Detail</th>
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </thead>
@@ -31,24 +33,28 @@
                 <tr>
                     <th>Name</th>
                     <th>Title</th>
-
+                    <th>price</th>
+                    <th>Detail</th>
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                @foreach($roomtype as $tag)
+                @foreach($roomtypes as $roomtype)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$tag->title}}</td>
+                    <td>{{$roomtype->title}}</td>
+                    <td>{{$roomtype->price}}</td>
+                    <td>{{$roomtype->detail}}</td>
+
 
                     <td class="text-right">
-                        <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
+                        <a href="{{ route('roomtype.show', ['roomtype' =>$roomtype->id])}}" title="show">
                             show</i>
                         </a>
 
 
-                        <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
-                        <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+                        <a href="{{route('roomtype.edit', ['roomtype'=>$roomtype->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
+                        <form style="display: inline-block" method="post" action="{{route('roomtype.destroy', ['roomtype'=>$roomtype->id])}}" >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>

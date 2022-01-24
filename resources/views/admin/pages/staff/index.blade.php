@@ -20,33 +20,48 @@
             <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
+                    <th>S/n</th>
                     <th>Name</th>
-                    <th>Title</th>
+                    <th>department</th>
+                    <th>photo</th>
+                    <th>bio</th>
+                    <th>salary_type</th>
+                    <th>salary_amount</th>
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
+                    <th>S/n</th>
                     <th>Name</th>
-                    <th>Title</th>
+                    <th>department</th>
+                    <th>photo</th>
+                    <th>bio</th>
+                    <th>salary_type</th>
+                    <th>salary_amount</th>
 
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                @foreach($staff as $tag)
+                @foreach($staffs as $staff)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$tag->title}}</td>
+                    <td>{{$staff->full_name}}</td>
+                    <td>{{$staff->department->title}}</td>
+                    <td><img src="{{asset('imgs/thumb').'/'.$staff->photo}}" width="50"></td>
 
+                    <td>{{$staff->bio}}</td>
+                    <td>{{$staff->salary_type}}</td>
+                    <td>{{$staff->salary_amt}}</td>
                     <td class="text-right">
-                        <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
+                        <a href="{{ route('staff.show', ['staff' =>$staff->id])}}" title="show">
                             show</i>
                         </a>
 
 
-                        <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
-                        <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+                        <a href="{{route('staff.edit', ['staff'=>$staff->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
+                        <form style="display: inline-block" method="post" action="{{route('staff.destroy', ['staff'=>$staff->id])}}" >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>

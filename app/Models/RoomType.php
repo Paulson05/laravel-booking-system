@@ -9,6 +9,9 @@ class RoomType extends Model
 {
     use HasFactory;
 
+    protected $table = 'room_types';
+    protected $guarded = [];
+
     function roomtypeimgs(){
         return $this->hasMany(Roomtypeimage::class,'room_type_id');
     }

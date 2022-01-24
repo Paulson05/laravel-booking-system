@@ -11,11 +11,17 @@
                             </h6>
                         </div>
                         <div class="card-body">
+                            @if($errors->any())
+                            @foreach($errors->all() as $error)
+                            <p class="text-danger">{{$error}}</p>
+                            @endforeach
+                            @endif
+
                             @if(Session::has('success'))
                             <p class="text-success">{{session('success')}}</p>
                             @endif
                             <div class="table-responsive">
-                                <form method="post" action="">
+                                <form method="post" action="{{route('staffpayment.store')}}">
                                     @csrf
                                     <table class="table table-bordered">
                                         <tr>
@@ -24,7 +30,18 @@
                                         </tr>
                                         <tr>
                                             <th>Date</th>
-                                            <td><input name="amount_date" class="form-control" type="date" /></td>
+                                            <td><input name="payment_date" class="form-control" type="date" /></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Select staff</th>
+                                            <td>
+                                                <select name="staff_id" class="form-control">
+                                                    <option value="0">--- Select ---</option>
+                                                    @foreach($staffs as $dp)
+                                                    <option value="{{$dp->id}}">{{$dp->full_name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td colspan="2">

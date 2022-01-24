@@ -27,30 +27,27 @@ class StaffPaymentController extends Controller
      */
     public function create()
     {
-        $staff = Staff::all();
-        return  view('admin.pages.staffpayment.create', ['satff'=>$staff]);
+        $staffs = Staff::all();
+        return  view('admin.pages.staffpayment.create', ['staffs'=>$staffs]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+          $this->validate($request,[
+              'staff_id',
+              'amount',
+              'payment_date'
+          ]);
+          $staffpayment = StaffPayment::create(collect($request->only('staff_id','amount','payment_date'))->all());
+          $staffpayment->save();
+          return  redirect()->route('staffpayment.index')->with('success', 'staffpayemnt added successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -82,8 +79,9 @@ class StaffPaymentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, StaffPayment $staff)
     {
-        //
+        $staff->delete();
+        return redirect()->back();
     }
 }

@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class StaffPayment extends Model
 {
+    protected $guarded = [];
+    protected $table = 'staff_payments';
     use HasFactory;
+    public function staff(){
+        return $this->belongsTo(Staff::class, 'staff_id');
+    }
+
 }

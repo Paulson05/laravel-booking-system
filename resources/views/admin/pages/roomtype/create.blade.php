@@ -15,7 +15,7 @@
             <p class="text-success">{{session('success')}}</p>
             @endif
             <div class="table-responsive">
-                <form method="post" action="{{url('admin/rooms')}}">
+                <form method="post" action="{{route('roomtype.store')}}">
                     @csrf
                     <table class="table table-bordered">
                         <tr>
@@ -26,7 +26,7 @@
                         </tr>
                         <tr>
                             <th>Detail</th>
-                            <td><input name="details" type="text" class="form-control" /></td>
+                            <td><input name="detail" type="text" class="form-control" /></td>
                         </tr>
                         <tr>
                             <th>Price</th>

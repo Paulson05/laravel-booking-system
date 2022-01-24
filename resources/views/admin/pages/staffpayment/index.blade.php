@@ -11,6 +11,9 @@
 
 </div>
 <div class="card mb-3">
+    @if(Session::has('success'))
+    <p class="text-success">{{session('success')}}</p>
+    @endif
     <div class="card-header">
         <i class="fas fa-table"></i>
         Data Table Example</div>
@@ -20,33 +23,36 @@
             <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
+                    <th>s/n</th>
                     <th>Name</th>
-                    <th>Title</th>
+                    <th>amount</th>
+                    <th>date</th>
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
+                    <th>s/n</th>
                     <th>Name</th>
-                    <th>Title</th>
+                    <th>amount</th>
+                    <th>date</th>
 
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                @foreach($staffpayment as $tag)
+                @foreach($staffpayment as $staff)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$tag->title}}</td>
+                    <td>{{$staff->staff->full_name}}</td>
+                    <td>{{$staff->amount}}</td>
+                    <td>{{$staff->payment_date}}</td>
 
                     <td class="text-right">
-                        <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
-                            show</i>
-                        </a>
 
 
-                        <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
-                        <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+
+                        <form style="display: inline-block" method="post" action="" >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>

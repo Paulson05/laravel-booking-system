@@ -10,12 +10,20 @@
                                 <a href="{{route('staff.index')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
+
                         <div class="card-body">
+                            @if($errors->any())
+                            @foreach($errors->all() as $error)
+                            <p class="text-danger">{{$error}}</p>
+                            @endforeach
+                            @endif
+
+
                             @if(Session::has('success'))
                             <p class="text-success">{{session('success')}}</p>
                             @endif
                             <div class="table-responsive">
-                                <form enctype="multipart/form-data" method="post" action="{{url('admin/staff')}}">
+                                <form enctype="multipart/form-data" method="post" action="{{route('staff.store')}}">
                                     @csrf
                                     <table class="table table-bordered">
                                         <tr>

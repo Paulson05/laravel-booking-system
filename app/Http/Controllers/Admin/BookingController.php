@@ -41,7 +41,19 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+           'customer_id' => 'required',
+            'room_id' => 'required',
+            'checkin_date' => 'required',
+            'checkout_date' => 'required',
+            'total_adults' => 'required',
+            'total_children' => 'required',
+
+        ]);
+
+        $booking = Booking::create(collect($request->only('customer_id', 'room_id', 'checkin_date','checkout_date','total_adults', 'total_children'))->all());
+        $booking->save();
+        return redirect()->route('booking.index')->with('sucsess','booking created succsfully');
     }
 
     /**

@@ -15,8 +15,8 @@ class RoomTypeController extends Controller
      */
     public function index()
     {
-        $roomtype = RoomType::all();
-        return  view('admin.pages.roomtype.index', ['roomtype'=>$roomtype]);
+        $roomtypes = RoomType::all();
+        return  view('admin.pages.roomtype.index', ['roomtypes'=>$roomtypes]);
     }
 
     /**
@@ -37,51 +37,40 @@ class RoomTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request->all());
+        $this->validate($request,[
+            'title' => 'required',
+            'price' => 'required',
+            'detail' => 'required'
+        ]);
+
+        $room = RoomType::create(collect($request->only(['title', 'price', 'detail']))->all());
+        $room->save();
+        return redirect()->route('roomtype.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(RoomType $roomtype)
     {
-        //
+        return view('admin.pages.roomtype.show', ['roometype'=> $roomtype]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(RoomType $roomtype)
     {
-        //
+        return view('admin.pages.roomtype.edit', ['roomtype'=> $roomtype]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, RoomType $roomtype)
     {
-        //
+        $roomtype->update(collect($request->only(['title', 'price', 'detail']))->all());
+        return redirect()->route('roomtype.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy(Request $request, RoomType $roomtype)
     {
-        //
+        $roomtype->delete();
+        return redirect()->back();
     }
 }
