@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Collection;
 
 class DepartmentController extends Controller
 {
@@ -37,7 +38,14 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+           'detail' => 'required',
+           'title' => 'required'
+        ]);
+
+        $dept = Department::create(collect($request->only(['detail', 'title']))->all());
+        $dept->save();
+        return redirect()->route('department.index');
     }
 
     /**
@@ -46,32 +54,22 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Department $department)
     {
-        //
+        return view('admin.pages.department.show', ['department' => $department]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    public function edit(Department $department)
     {
-        //
+        return view('admin.pages.department.edit', ['department'=> $department]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Department $department)
     {
-        //
+        $department->update(collect($request->only(['title', 'detail']))->all());
+        return redirect()->route('department.index')->with('success', 'department updated successfully');
     }
 
     /**
@@ -80,8 +78,9 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Department $department)
     {
-        //
+        $department->delete();
+        return redirect()->back()->with('success', 'department deleted succesfully');
     }
 }

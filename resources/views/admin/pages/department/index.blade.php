@@ -17,7 +17,9 @@
         <i class="fas fa-table"></i>
         Data Table Example</div>
     <div class="card-body">
-
+        @if(Session::has('success'))
+        <p class="text-success">{{session('success')}}</p>
+        @endif
         <div class="table-responsive">
             <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
@@ -31,24 +33,26 @@
                 <tr>
                     <th>Name</th>
                     <th>Title</th>
+                    <th>Detail</th>
 
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                @foreach($departments as $tag)
+                @foreach($departments as $department)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$tag->title}}</td>
+                    <td>{{$department->title}}</td>
+                    <td>{{$department->detail}}</td>
 
                     <td class="text-right">
-                        <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
+                        <a href="{{ route('department.show', ['department' =>$department->id])}}" title="show">
                             show</i>
                         </a>
 
 
-                        <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
-                        <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+                        <a href="{{route('department.edit', ['department'=>$department->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
+                        <form style="display: inline-block" method="post" action="{{route('department.destroy', ['department'=>$department->id])}}" >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>
