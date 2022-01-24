@@ -16,12 +16,12 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <form method="POST" action="{{route('tag.update', ['tag'=>$tag->id])}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('room.update', ['room'=>$room->id])}}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control" value="{{ $tag->title }}" >
+                    <input type="text" name="title" class="form-control" value="{{ $room->title }}" >
                 </div>
 
                 <div class="form-group pt-2">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRoomRequest;
 use App\Models\Room;
 use App\Models\RoomType;
 use Illuminate\Http\Request;
@@ -31,26 +32,17 @@ class RoomController extends Controller
         return view('admin.pages.room.create', ['roomtypes'=> $roomtypes]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(StoreRoomRequest $request)
     {
-        //
+        $room = Room::create(collect($request->only(['title', 'room_type_id']))->all());
+        $room->save();
+        return redirect()->route('room.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Room $room)
     {
-        //
+        return view('admin.pages.room.show', ['room'=> $room]);
     }
 
     /**
@@ -59,9 +51,9 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Room $room)
     {
-        //
+        return view('admin.pages.room.edit', ['room'=> $room]);
     }
 
     /**
@@ -71,9 +63,10 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Room $room)
     {
-        //
+        $room->update(collect($request->only(['title', 'room_type_id']))->all());
+        return  redirect()->route('room.index');
     }
 
     /**
@@ -82,8 +75,9 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Room $room)
     {
-        //
+        $room->delete();
+        return redirect()->back();
     }
 }

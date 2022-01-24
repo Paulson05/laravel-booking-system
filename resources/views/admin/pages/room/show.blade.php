@@ -1,22 +1,27 @@
 @extends('admin.template.master')
 @section('body')
 
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h3>Name: {{$tag['title']}}</h3>
+<div class="container-fluid">
 
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Add Room
+                <a href="{{route('room.index')}}" class="float-right btn btn-success btn-sm">View All</a>
+            </h6>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Permissions</h5>
-            <p class="card-text">
-                ...........
-            </p>
-        </div>
-        <div class="card-footer">
-            <a href="{{ url()->previous() }}" class="btn btn-primary">Go Back</a>
+            <div class="table-responsive">
+                <table class="table table-bordered" >
+                    <tr>
+                        <th>Title</th>
+                        <td>{{$room->title}}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
+
 </div>
 
 @endsection
