@@ -80,11 +80,6 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
 
-
-
-
-
-
         if($customer){
             if($request->hasFile('photo')){
                 $image1=$request->file('photo');

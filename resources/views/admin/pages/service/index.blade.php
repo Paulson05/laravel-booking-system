@@ -21,33 +21,43 @@
             <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Title</th>
+
+                    <th>S/n</th>
+                    <th>Title Name</th>
+                    <th>photo</th>
+                    <th>small desc</th>
+                    <th>detail desc</th>
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                    <th>Name</th>
-                    <th>Title</th>
+
+                    <th>S/n</th>
+                    <th>Title name</th>
+                    <th>photo</th>
+                    <th>small desc</th>
+                    <th>detail desc</th>
 
                     <th class="disabled-sorting text-right">Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                @foreach($service as $tag)
+                @foreach($services as $service)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$tag->title}}</td>
-
+                    <td>{{$service->title}}</td>
+                    <td><img src="{{ asset('imgs/thumb').'/'.$service->photo }}" width="50" /></td>
+                    <td>{{$service->small_desc}}</td>
+                    <td>{{$service->detail_desc}}</td>
                     <td class="text-right">
-                        <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
+                        <a href="{{ route('services.show', ['service' =>$service->id])}}" title="show">
                             show</i>
                         </a>
 
 
-                        <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
-                        <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+                        <a href="{{route('services.edit', ['service'=>$service->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
+                        <form style="display: inline-block" method="post" action="{{route('services.destroy', ['service'=>$service->id])}}" >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>

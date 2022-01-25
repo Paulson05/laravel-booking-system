@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $service = Service::all();
-        return view('admin.pages.service.index', ['service' => $service]);
+        $services = Service::all();
+        return view('admin.pages.service.index', ['services' => $services]);
     }
 
     /**
@@ -35,20 +36,30 @@ class ServicesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreServiceRequest $request)
     {
-        //
+
+        if($request->hasFile('photo')){
+            $image1=$request->file('photo');
+            $reThumbImage=time().'.'.$image1->getClientOriginalExtension();
+            $dest1=public_path('/imgs/thumb');
+            $image1->move($dest1,$reThumbImage);
+        }else{
+            $reThumbImage='na';
+        }
+       $service = Service::create(collect($request->only(['title', 'small_desc', 'detail_desc']))
+            ->put('photo',$reThumbImage)
+            ->all());
+        $service->save();
+
+        return redirect()->route('services.index')->with('success', 'service added sucessfully');
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(Service $service)
     {
-        //
+        return view('admin.pages.service.show', ['service'=> $service]);
     }
 
     /**
@@ -57,31 +68,35 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Service $service)
     {
-        //
+        return view('admin.pages.service.edit', ['service'=> $service]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request,Service $service )
     {
-        //
+
+        if($service){
+            if($request->hasFile('photo')){
+                $image1=$request->file('photo');
+                $reThumbImage=time().'.'.$image1->getClientOriginalExtension();
+                $dest1=public_path('/imgs/thumb');
+                $image1->move($dest1,$reThumbImage);
+            }else{
+                $reThumbImage='na';
+            }
+
+
+            $service->update(collect($request->only(['title', 'small_desc', 'detail_desc']))->put('photo',$reThumbImage)->put('password', bcrypt($request->password))->all());
+            return redirect()->route('customer.index')
+                ->with('success', 'stage updated sucessfully!');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->back();
     }
 }
