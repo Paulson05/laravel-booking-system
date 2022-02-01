@@ -22,7 +22,7 @@
                             <p class="text-success">{{session('success')}}</p>
                             @endif
                             <div class="table-responsive">
-                                <form method="post" enctype="multipart/form-data" action="{{url('admin/banner')}}">
+                                <form method="post" enctype="multipart/form-data" action="{{route('banner.index')}}">
                                     @csrf
                                     <table class="table table-bordered" >
                                         <tr>

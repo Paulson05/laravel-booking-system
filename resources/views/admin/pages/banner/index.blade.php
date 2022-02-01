@@ -34,19 +34,15 @@
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        @foreach($banner as $tag)
+                                        @foreach($banners as $banner)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
-                                            <td>{{$tag->title}}</td>
+                                            <td>{{$banner->title}}</td>
 
                                             <td class="text-right">
-                                                <a href="{{ route('room.show', ['tag' =>$tag->id])}}" title="show">
-                                                    show</i>
-                                                </a>
 
-
-                                                <a href="{{route('room.edit', ['tag'=>$tag->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
-                                                <form style="display: inline-block" method="post" action="{{route('tag.destroy', ['tag'=>$tag->id])}}" >
+                                                <a href="{{route('banner.edit', ['banner'=>$banner->id])}}" class="btn btn-round btn-warning btn-icon btn-sm "><i class="far fa-calendar-alt">edit</i></a>
+                                                <form style="display: inline-block" method="post" action="{{route('banner.destroy', ['banner'=>$banner->id])}}" >
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm p-0"><i class="" ></i>delete</button>

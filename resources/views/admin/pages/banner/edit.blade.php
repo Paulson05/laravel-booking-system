@@ -1,5 +1,5 @@
-@extends('layout')
-@section('content')
+@extends('admin.template.master')
+@section('body')
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -7,7 +7,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Update Customer
-                                <a href="{{url('admin/banner')}}" class="float-right btn btn-success btn-sm">View All</a>
+                                <a href="{{route('banner.index')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -22,7 +22,7 @@
                             <p class="text-success">{{session('success')}}</p>
                             @endif
                             <div class="table-responsive">
-                                <form method="post" enctype="multipart/form-data" action="{{url('admin/banner/'.$data->id)}}">
+                                <form method="post" enctype="multipart/form-data" action="{{route('banner.index')}}">
                                     @csrf
                                     @method('put')
                                     <table class="table table-bordered" >
@@ -30,22 +30,22 @@
                                             <th>Banner Image<span class="text-danger">*</span></th>
                                             <td>
                                                 <input name="banner_src" type="file" />
-                                                <input type="hidden" name="prev_photo" value="{{$data->banner_src}}" />
-                                                <img width="100" src="{{asset('storage/app/'.$data->banner_src)}}" />
+                                                <input type="hidden" name="prev_photo" value="{{$banner->banner_src}}" />
+                                                <img width="100" src="{{asset('img/thumb/'.$banner->banner_src)}}" />
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Alt Text <span class="text-danger">*</span></th>
-                                            <td><input value="{{$data->alt_text}}" name="alt_text" type="text" class="form-control" /></td>
+                                            <td><input value="{{$banner->alt_text}}" name="alt_text" type="text" class="form-control" /></td>
                                         </tr>
                                         <tr>
                                             <th>Publish Status<span class="text-danger">*</span></th>
-                                            <td><input @if($data->publish_status=='on') checked @endif name="publish_status" type="checkbox" /></td>
+                                            <td><input @if($banner->publish_status=='on') checked @endif name="publish_status" type="checkbox" /></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2">
                                                 <input type="submit" class="btn btn-primary" />
-                                            </td> 
+                                            </td>
                                         </tr>
                                     </table>
                                 </form>

@@ -14,24 +14,20 @@
                             @if(Session::has('success'))
                             <p class="text-success">{{session('success')}}</p>
                             @endif
-                            <div class="table-responsive">
-                                <form method="post" action="{{url('admin/department')}}">
+                            <div class="container my-4">
+                                <h3 class="mb-3">Add Testimonial</h3>
+                                @if(Session::has('success'))
+                                <p class="text-success">{{session('success')}}</p>
+                                @endif
+                                <form method="post" action="{{url('customer/save-testimonial')}}">
                                     @csrf
                                     <table class="table table-bordered">
                                         <tr>
-                                            <th>Title</th>
-                                            <td><input name="title" type="text" class="form-control" /></td>
+                                            <th>Testimonial<span class="text-danger">*</span></th>
+                                            <td><textarea name="testi_cont" class="form-control" rows="8"></textarea></td>
                                         </tr>
                                         <tr>
-                                            <th>Detail</th>
-                                            <td>
-                                                <textarea name="detail" class="form-control"></textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <input type="submit" class="btn btn-primary" />
-                                            </td>
+                                            <td colspan="2"><input type="submit" class="btn btn-primary" /></td>
                                         </tr>
                                     </table>
                                 </form>

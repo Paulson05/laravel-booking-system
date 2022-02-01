@@ -1,5 +1,5 @@
-@extends('layout')
-@section('content')
+@extends('admin.template.master')
+@section('body')
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -15,19 +15,19 @@
                                 <table class="table table-bordered" >
                                     <tr>
                                         <th>Title</th>
-                                        <td>{{$data->title}}</td>
+                                        <td>{{$service->title}}</td>
                                     </tr>
                                     <tr>
                                         <th>Photo</th>
-                                        <td><img width="100" src="{{asset('storage/app/'.$data->photo)}}" /></td>
+                                        <td><img src="{{ asset('imgs/thumb').'/'.$service->photo }}" width="100" /></td>
                                     </tr>
                                     <tr>
                                         <th>Small Detail</th>
-                                        <td>{{$data->small_desc}}</td>
+                                        <td>{{$service->small_desc}}</td>
                                     </tr>
                                     <tr>
                                         <th>Full Detail</th>
-                                        <td>{{$data->detail_desc}}</td>
+                                        <td>{{$service->detail_desc}}</td>
                                     </tr>
                                 </table>
                             </div>

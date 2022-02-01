@@ -88,9 +88,9 @@ class ServicesController extends Controller
             }
 
 
-            $service->update(collect($request->only(['title', 'small_desc', 'detail_desc']))->put('photo',$reThumbImage)->put('password', bcrypt($request->password))->all());
-            return redirect()->route('customer.index')
-                ->with('success', 'stage updated sucessfully!');
+            $service->update(collect($request->only(['title', 'small_desc', 'detail_desc']))->put('photo',$reThumbImage)->all());
+            return redirect()->route('services.index')
+                ->with('success', 'services updated sucessfully!');
         }
     }
 

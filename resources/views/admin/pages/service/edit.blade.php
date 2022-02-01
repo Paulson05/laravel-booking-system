@@ -1,5 +1,5 @@
-@extends('layout')
-@section('content')
+@extends('admin.template.master')
+@section('body')
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -22,34 +22,34 @@
                             <p class="text-success">{{session('success')}}</p>
                             @endif
                             <div class="table-responsive">
-                                <form method="post" enctype="multipart/form-data" action="{{url('admin/service/'.$data->id)}}">
+                                <form method="post" enctype="multipart/form-data" action="{{route('services.update', ['service'=>$service->id])}}">
                                     @csrf
                                     @method('put')
                                     <table class="table table-bordered" >
                                         <tr>
                                             <th>Title <span class="text-danger">*</span></th>
-                                            <td><input value="{{$data->title}}" name="title" type="text" class="form-control" /></td>
+                                            <td><input value="{{$service->title}}" name="title" type="text" class="form-control" /></td>
                                         </tr>
                                         <tr>
                                             <th>Small Desc <span class="text-danger">*</span></th>
-                                            <td><textarea name="small_desc" class="form-control">{{$data->small_desc}}</textarea></td>
+                                            <td><textarea name="small_desc" class="form-control">{{$service->small_desc}}</textarea></td>
                                         </tr>
                                         <tr>
                                             <th>Detail Desc <span class="text-danger">*</span></th>
-                                            <td><textarea name="detail_desc" class="form-control">{{$data->detail_desc}}</textarea></td>
+                                            <td><textarea name="detail_desc" class="form-control">{{$service->detail_desc}}</textarea></td>
                                         </tr>
                                         <tr>
                                             <th>Photo</th>
                                             <td>
                                                 <input name="photo" type="file" />
-                                                <input type="hidden" name="prev_photo" value="{{$data->photo}}" />
-                                                <img width="100" src="{{asset('storage/app/'.$data->photo)}}" />
+                                                <input type="hidden" name="photo" value="{{$service->photo}}" />
+                                                <img src="{{ asset('imgs/thumb').'/'.$service->photo }}" width="50" />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan="2">
                                                 <input type="submit" class="btn btn-primary" />
-                                            </td> 
+                                            </td>
                                         </tr>
                                     </table>
                                 </form>

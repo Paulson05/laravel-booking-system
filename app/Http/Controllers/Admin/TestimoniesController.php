@@ -37,7 +37,16 @@ class TestimoniesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request,[
+           'testi_cont'=> 'required',
+           'customer_id'  => 'required'
+        ]);
+
+        $testimony = Testimonial::create(collect($request->only(['customer_id', 'testi_cont']))->only());
+        $testimony->save();
+        return redirect()->route('testimonies.index')->with('succcess', 'testimonies created succesfuuly');
+
     }
 
     /**

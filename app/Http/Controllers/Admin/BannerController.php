@@ -15,8 +15,8 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banner = Banner::all();
-        return view('admin.pages.banner.index', ['banner'=> $banner]);
+        $banners = Banner::all();
+        return view('admin.pages.banner.index', ['banners'=> $banners]);
     }
 
     /**
@@ -37,7 +37,27 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request,[
+            'banner_src'=> 'required',
+            'alt_text' => 'required',
+            'publish_status' => 'required'
+
+        ]);
+        if($request->hasFile('banner_src')){
+            $image1=$request->file('banner_src');
+            $reThumbImage=time().'.'.$image1->getClientOriginalExtension();
+            $dest1=public_path('/imgs/thumb');
+            $image1->move($dest1,$reThumbImage);
+        }else{
+            $reThumbImage='na';
+        }
+        $banner= Banner::create(collect($request->only(['alt_text','publish_status']))
+            ->put('banner_src',$reThumbImage)
+            ->all());
+        $banner->save();
+
+        return redirect()->back()->with('success', 'banner  added sucessfully');
     }
 
     /**
@@ -46,9 +66,9 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Banner $banner)
     {
-        //
+        return view('admin.pages.banner.show', ['banner'=> $banner]);
     }
 
     /**
@@ -57,9 +77,9 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Banner $banner)
     {
-        //
+        return view('admin.pages.banner.edit', ['banner'=> $banner]);
     }
 
     /**
